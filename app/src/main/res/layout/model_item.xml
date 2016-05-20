@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="a"
+            type="java.lang.String"/>
+        <variable
+            name="b"
+            type="java.lang.String"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/model_item"
+        android:background="?attr/selectableItemBackground"
+        >
+
+        <TextView
+            android:id="@+id/tv_a"
+            android:layout_width="match_parent"
+            android:layout_height ="wrap_content"
+            android:text="@{a}"/>
+        <android.support.v7.widget.CardView
+            android:id="@+id/cd_view"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:elevation="10dp"
+            android:layout_gravity="center"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/battle_reslut_bg2"/>
+                <TextView
+                    android:id="@+id/tv_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{b}"
+                    android:background="@android:color/darker_gray"
+                    android:gravity="center"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</layout>
