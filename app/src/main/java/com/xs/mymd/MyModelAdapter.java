@@ -1,17 +1,17 @@
 package com.xs.mymd;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.xs.mymd.databinding.ModelItemBinding;
+import com.xs.mymd.login.LoginActivity;
 
 /**
  * @version V1.0 <描述当前版本功能>
@@ -84,6 +84,8 @@ public class MyModelAdapter extends BaseAdapter<MyModel> implements View.OnClick
                 case R.id.cd_view:
                 MyModel myModel = (MyModel) v.getTag();
                 Toast.makeText(mAct, myModel.toString(), Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(mAct, LoginActivity.class);
+                    mAct.startActivity(intent);
                     break;
             }
         }

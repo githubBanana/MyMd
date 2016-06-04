@@ -36,10 +36,12 @@ public class MainActivity extends ToolBarActivity {
 
     private List<MyModel> initAdapterData() {
         List<MyModel> list = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
+        String[] arrays = getResources().getStringArray(R.array.arrays);
+        for (String str :
+                arrays) {
             MyModel myModel = new MyModel();
-            myModel.setA("a"+i);
-            myModel.setB("b"+i);
+            myModel.setA(str);
+            myModel.setB(str);
             list.add(myModel);
         }
         return list;

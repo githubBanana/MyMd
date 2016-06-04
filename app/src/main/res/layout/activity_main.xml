@@ -29,6 +29,7 @@
         android:layout_margin="16dp"
         android:layout_gravity="center|bottom"
         android:src="@android:drawable/ic_dialog_alert"
+        app:backgroundTint="#123456"
         />
 
 </android.support.design.widget.CoordinatorLayout>
