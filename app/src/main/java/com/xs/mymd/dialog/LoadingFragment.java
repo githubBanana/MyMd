@@ -17,11 +17,10 @@ import com.xs.mymd.R;
  * @email Xs.lin@foxmail.com
  */
 public class LoadingFragment extends DialogFragment {
-    private static final String TAG = "LoadingFragment";
     private static final String LABEL = "message";
     public static LoadingFragment getLoad(String message) {
-        LoadingFragment lf = new LoadingFragment();
-        Bundle bundle = new Bundle();
+        final LoadingFragment lf = new LoadingFragment();
+        final Bundle bundle = new Bundle();
         bundle.putString(LABEL, message);
         lf.setArguments(bundle);
         return lf;
@@ -33,13 +32,11 @@ public class LoadingFragment extends DialogFragment {
 //        setCancelable(true);
         setStyle(DialogFragment.STYLE_NORMAL,R.style.AppTheme_Loading);
     }
-    private View _view;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        _view = inflater.inflate(R.layout.dialog_loading_layout,container,false);
-        String message = getArguments().getString(LABEL);
-        Log.e(TAG, "onCreateView: "+message );
+        final View _view = inflater.inflate(R.layout.dialog_loading_layout,container,false);
+        final String message = getArguments().getString(LABEL);
         if (message == null || "".equals(message)){}
             else{
             final TextView _message = (TextView) _view.findViewById(R.id.tv_progress_message);
@@ -47,12 +44,6 @@ public class LoadingFragment extends DialogFragment {
             _message.setText(message);
         }
         return _view;
-    }
-
-    public void setMessage(String message) {
-        final TextView _message = (TextView) _view.findViewById(R.id.tv_progress_message);
-        _message.setVisibility(View.VISIBLE);
-        _message.setText(message);
     }
 
 }
