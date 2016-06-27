@@ -7,6 +7,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -38,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
     }
     @OnClick(R.id.bt_login )
     public void login(){
+        if (TextUtils.isEmpty(_addressEt.getText()))
+            _addressEt.setError("address is not null!");
         showProgress(_addressEt.getText().toString());
         _loginBtn.postDelayed(new Runnable() {
             @Override
