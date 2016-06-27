@@ -30,6 +30,11 @@
         android:layout_gravity="center|bottom"
         android:src="@android:drawable/ic_dialog_alert"
         app:backgroundTint="#123456"
+        app:rippleColor="@android:color/holo_blue_dark"
+        app:elevation="@dimen/activity_horizontal_margin"
+        app:pressedTranslationZ="@dimen/activity_horizontal_margin"
+        app:fabSize="normal"
+        app:layout_behavior="com.xs.mymd.ScrollAwareFABBehaviorDefault"
         />
 
 </android.support.design.widget.CoordinatorLayout>
